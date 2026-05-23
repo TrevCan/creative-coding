@@ -1,0 +1,60 @@
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(180);
+  // alterna entre 2 estados
+  // randomSeed(3) 
+  // y 
+  // randomSeed(5)
+  /*
+  if (millis()%1500 == 0) {
+    randomSeed(3);
+  } else {
+    randomSeed(5);
+  }
+  */
+  ///////////
+  
+  // siempre aleatorio
+  // lanzara el mismo seed en el mismo segundo
+  // cuando cambie al siguiente segundo
+  // llamara randomSeed con el siguiente numero.
+  randomSeed(millis()/1000);
+
+  int n_x = 8;
+  int n_y = 8;
+  for (int x = 0; x < n_x; x++) {
+    for (int y = 0; y < n_y; y++) {
+      int size = width / 8;
+      int pointx = x*size;
+      int pointy = y*size;
+      noFill();
+      stroke(0);
+      rect(x*size, y*size, size, size);
+      int centerx = x*size + size/2;
+      int centery = y*size + size/2;
+      fill(245, 17, 188);
+      noStroke();
+      circle(centerx, centery, 8);
+      
+      stroke(17, 22, 245);
+
+      int random4 = (int)random(0, 4);
+      if (random4 == 0) {
+        //pos 1
+        line(pointx, pointy, centerx, centery);
+      } else if (random4 == 1) {
+        ////pos 2
+        line(pointx+size, pointy, centerx, centery);
+      } else if (random4 == 2) {
+        ////pos 3
+        line(pointx+size, pointy+size, centerx, centery);
+      } else {
+        ////pos 4
+        line(pointx, pointy+size, centerx, centery);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+Hacer un ejercicio de puntos que se comporten como una ola.
+
+Utilizaremos un punto de partida siendo la posicion X del mouse.
+
+Todos los puntos a la izquierda del mouse se moveran hacia abajo.
+la cantidad que se moveran hacia abajo sera proporcional a la
+distancia horizontal entre el punto y la posicion X del mouse
+
+Todos los puntos a la derecha del mouse se moveran hacia arriba.
+la cantidad que se moveran hacia arriba sera proporcional a la
+distancia horizontal entre el punto y la posicion X del mouse
